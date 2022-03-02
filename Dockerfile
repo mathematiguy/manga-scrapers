@@ -21,6 +21,10 @@ RUN mkdir -p /home/kaimahi/
 RUN chown -R kaimahi:kaimahi /home/kaimahi
 ENV HOME /home/kaimahi
 
+# Install apt packages
+RUN apt update
+RUN apt install -y wget img2pdf
+
 # Install python + other things
 RUN apt update
 RUN apt install -y python3-dev python3-pip

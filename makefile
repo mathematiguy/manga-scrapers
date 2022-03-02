@@ -10,6 +10,9 @@ DOCKER_ARGS ?=
 
 .PHONY: docker docker-push docker-pull enter enter-root
 
+crawl:
+	$(RUN) bash -c "cd demonslayer && scrapy crawl manga -o demonslayer.json"
+
 JUPYTER_PASSWORD ?= jupyter
 JUPYTER_PORT ?= 8888
 .PHONY: jupyter
